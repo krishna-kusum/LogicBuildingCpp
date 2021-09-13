@@ -1,2 +1,2 @@
-# 100_codes_for_Logic_Building
+# 100 codes for Logic Building
 Code Snippets for Logic Building in C++ 
