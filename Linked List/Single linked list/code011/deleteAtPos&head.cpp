@@ -67,6 +67,23 @@ void deleteAtStart(node* &head){
     delete deleteNode;
 }
 
+//delete at end
+void deleteAtEnd(node* &head){
+    
+    node* temp = head;
+    
+    while(temp->next->next){
+        temp = temp->next;
+        
+    }
+    
+    node* deleteNode = temp->next;
+    temp->next = NULL;
+    delete deleteNode;
+    
+}
+
+
 void display(node* head){
     
     node* temp = head;
@@ -76,6 +93,7 @@ void display(node* head){
         
     }
 }
+
 
 int main(){
     
@@ -91,6 +109,9 @@ int main(){
     display(head);
     std::cout<<"\n";
     deleteAtStart(head);
+    display(head);
+    std::cout<<"\n";
+    deleteAtEnd(head);
     display(head);
     
     return 0;
