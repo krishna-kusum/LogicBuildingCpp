@@ -14,8 +14,15 @@ class node{
 
 //insert at tail
 void insertAtTail(node* &head, int data){
+     node* newnode = new node(data);
+    
+    if(head == NULL){
+        head = newnode;
+        return;
+    }
+    
+    
     node* temp = head;
-    node* newnode = new node(data);
     
     while(temp->next != NULL){
         temp = temp->next;
