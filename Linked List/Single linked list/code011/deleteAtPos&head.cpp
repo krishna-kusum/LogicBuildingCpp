@@ -60,6 +60,13 @@ void deleteAtPos(node* &head, int pos){
     delete deleteNode;
 }
 
+//deletionAtBegin
+void deleteAtStart(node* &head){
+    node* deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+}
+
 void display(node* head){
     
     node* temp = head;
@@ -81,6 +88,9 @@ int main(){
     display(head);
     std::cout<<"\n";
     deleteAtPos(head, 3);
+    display(head);
+    std::cout<<"\n";
+    deleteAtStart(head);
     display(head);
     
     return 0;
