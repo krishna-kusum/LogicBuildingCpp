@@ -1,6 +1,6 @@
 #include<iostream>
 #include<math.h>
-#define pi 3.14
+#define pi 3.141592
 #include<cmath>
 #include<iomanip>
 
