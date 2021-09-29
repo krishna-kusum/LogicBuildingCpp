@@ -70,6 +70,7 @@ int main(){
     root->right->left = new node(6);
     
     preorderWOrecursion(root);
+    postorderWOrecursion(root);
     
     return 0;
 }
