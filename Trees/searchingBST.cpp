@@ -1,4 +1,3 @@
-//Binary Search Tree
 #include<iostream>
 
 //tree node
@@ -17,7 +16,7 @@ struct node{
 
 //searching 
 struct node* search(struct node* root, int val){
-    
+    //base case
     //if found or reached NULL
     if(root ==  NULL || root->data == val ){
         return root;
@@ -32,6 +31,7 @@ struct node* search(struct node* root, int val){
     if(val > root->data){
         return search(root->right, val);
     }
+    return NULL;
 }
 
 //driver function
@@ -44,7 +44,7 @@ int main(){
     root->left->right = new node(3);
     root->right->left = new node(5);
     
-    struct node* found = search(root, 6);
+    struct node* found = search(root, 2);
     std::cout<<found->left->data<<" "<<found->data<<" "<<found->right->data;
     
     return 0;
