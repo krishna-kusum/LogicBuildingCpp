@@ -1,5 +1,3 @@
-//LEVEL ORDER TRAVERSAL USING QUEUE
-//SUM AT KTH LEVEL
 
  #include<iostream>
  #include<vector>
@@ -21,80 +19,16 @@
      
  };
  
- void printLevelOrder(node* root){
+ //COUNT NODES IN A TREE RECURSIVELY
+ int countNodes(node* root){
      
-     if(root==NULL){
-         return;
+     if(root == NULL){
+         return 0;
      }
      
-     //1st level 
-     queue<node*> q;
-     q.push(root);
-     q.push(NULL);
-     
-     while(!q.empty()){
-         
-         node* node = q.front();
-         q.pop();
-         
-         if(node != NULL){
-             
-             std::cout << node->data << " ";
-             if(node->left)
-                q.push(node->left);
-            
-            if(node->right)
-                q.push(node->right);
-         }else if(!q.empty()){
-             q.push(NULL);
-         }
-         
-     }
-     
+     return countNodes(root->left) + countNodes(root->right) + 1;
  }
- 
- //SUM AT KTH LEVEL 
- 
- int sumAtLevelK(node* root, int k){
- 
- 
-    if(root== NULL){
-        return -1;
-    }    
-    
-    
-     queue<node*> q;
-     q.push(root);
-     q.push(NULL);
-     
-     int level = 0;
-     int sum = 0;
-     
-     while(!q.empty()){
-         
-         node* Node = q.front();
-         q.pop();
-         
-         if(Node != NULL){
-             
-             if(level == k){
-                 sum += Node->data;
-             }
-             
-             if(Node->left)
-                q.push(Node->left);
-                
-            if(Node->right)
-                q.push(Node->right);
-         }else if(!q.empty()){
-             q.push(NULL);
-             level++;
-         }
-     }
-     
-     return sum;
- }
- 
+
  int main(){
      
      node* root = new node(1);
@@ -105,9 +39,8 @@
      root->right->left = new node(6);
      root->right->right = new node(7);
      
-    //  printLevelOrder(root);
+     std::cout << countNodes(root) << std::endl;
      
-     cout<<sumAtLevelK(root,2);
      
      return 0;
  }
