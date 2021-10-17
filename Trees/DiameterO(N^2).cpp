@@ -64,3 +64,5 @@ int main(){
     
     return 0;
 }
+
+//O(N^2)
